@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101126">
+  <title>QuizMaster | Challenge Your Mind</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#" data-page="home">
+      <span class="logo-icon">Q</span> QuizMaster
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <nav id="mainNav">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="categories">Quizzes</button>
+      <button class="nav-link" data-page="daily">Daily Challenge</button>
+      <button class="nav-link" data-page="leaderboard">Leaderboard</button>
+      <button class="nav-link" data-page="profile">Profile</button>
+      <button class="nav-link" data-page="auth" id="authNav">Login</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active-page">
+      <div class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">✦ LEARN • PLAY • ACHIEVE</span>
+          <h1>Challenge your mind.<br><span>Become a champion.</span></h1>
+          <p>
+            Test your knowledge, explore exciting topics, earn XP,
+            and track your progress with QuizMaster.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" data-page="categories">Explore Quizzes →</button>
+            <button class="btn secondary" data-page="daily">Today's Challenge</button>
+          </div>
+
+          <div class="hero-stats">
+            <div><strong>16</strong><span>Categories</span></div>
+            <div><strong>5</strong><span>Questions per quiz</span></div>
+            <div><strong>∞</strong><span>Ways to learn</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Quiz illustration">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="floating-icon icon-book">📚</div>
+          <div class="floating-icon icon-bulb">💡</div>
+          <div class="floating-icon icon-star">⭐</div>
+          <div class="quiz-illustration">
+            <div class="illustration-top"><span>● ● ●</span><span>QUIZ TIME</span></div>
+            <div class="illustration-question">Ready to test<br>your knowledge?</div>
+            <div class="answer-line"><span>✓</span> Let's begin!</div>
+            <div class="illustration-progress"><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">START LEARNING</span>
+          <h2>Explore categories</h2>
+          <p>Choose a topic and put your knowledge to the test.</p>
+        </div>
+        <button class="text-button" data-page="categories">View all →</button>
+      </div>
+      <div id="homeCategories" class="category-grid"></div>
+
+      <section class="daily-banner">
+        <div>
+          <span class="eyebrow">YOUR DAILY DOSE OF KNOWLEDGE</span>
+          <h2>One challenge. New knowledge.</h2>
+          <p>Complete today's challenge and earn bonus XP.</p>
+          <button class="btn primary" data-page="daily">Take the challenge →</button>
+        </div>
+        <div class="banner-emoji">🏆</div>
+      </section>
+    </section>
+
+    <section id="categories" class="page">
+      <div class="page-heading">
+        <span class="eyebrow">FIND YOUR NEXT CHALLENGE</span>
+        <h1>Quiz Categories</h1>
+        <p>Choose from 16 topics and see how much you know.</p>
+      </div>
+      <input id="categorySearch" class="search-input" type="search"
+             placeholder="🔍 Search categories..." aria-label="Search categories">
+      <div id="allCategories" class="category-grid"></div>
+    </section>
+
+    <section id="quiz" class="page">
+      <div class="quiz-shell">
+        <button class="text-button" id="exitQuiz">← Back to categories</button>
+        <div class="quiz-top">
+          <span id="quizCategory" class="eyebrow">GENERAL KNOWLEDGE</span>
+          <span id="quizCounter">Question 1 of 5</span>
+        </div>
+        <div class="progress-track"><span id="quizProgress"></span></div>
+        <div class="quiz-card">
+          <div class="question-number" id="questionNumber">QUESTION 01</div>
+          <h1 id="questionText">Question text goes here</h1>
+          <div id="answerOptions" class="answer-options"></div>
+          <p id="answerFeedback" class="answer-feedback" aria-live="polite"></p>
+          <button id="nextQuestion" class="btn primary full-width" disabled>
+            Check answer
+          </button>
+        </div>
+        <p class="quiz-tip">💡 Take your time and choose the best answer.</p>
+      </div>
+    </section>
+
+    <section id="result" class="page">
+      <div class="result-card">
+        <div class="result-icon" id="resultIcon">🎉</div>
+        <span class="eyebrow">QUIZ COMPLETED</span>
+        <h1 id="resultTitle">Great job!</h1>
+        <p id="resultMessage">You finished the quiz.</p>
+        <div class="result-score" id="resultPercent">0%</div>
+        <div class="result-stats">
+          <div><strong id="resultCorrect">0/5</strong><span>Correct answers</span></div>
+          <div><strong id="resultXP">+0 XP</strong><span>XP earned</span></div>
+        </div>
+        <div class="hero-actions centered">
+          <button class="btn primary" id="retryQuiz">Try again</button>
+          <button class="btn secondary" data-page="categories">More quizzes</button>
+        </div>
+        <button class="text-button" data-page="leaderboard">View leaderboard →</button>
+      </div>
+    </section>
+
+    <section id="daily" class="page">
+      <div class="page-heading">
+        <span class="eyebrow">A NEW CHALLENGE EVERY DAY</span>
+        <h1>Daily Challenge <span>📅</span></h1>
+        <p>Answer five questions and earn bonus XP for participating.</p>
+      </div>
+      <div class="daily-card">
+        <div class="daily-art">🌟</div>
+        <div>
+          <span class="status-pill">DAILY SPECIAL</span>
+          <h2 id="dailyTitle">Today's Knowledge Challenge</h2>
+          <p>5 questions · Earn up to 100 XP</p>
+          <p id="dailyStatus" class="muted-text"></p>
+          <button id="startDaily" class="btn primary">Start daily challenge →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="leaderboard" class="page">
+      <div class="page-heading">
+        <span class="eyebrow">CELEBRATE YOUR PROGRESS</span>
+        <h1>Leaderboard 🏆</h1>
+        <p>Your best quiz results, ranked by score.</p>
+      </div>
+      <div class="panel">
+        <div class="leaderboard-heading">
+          <span>Rank</span><span>Player</span><span>Best score</span><span>XP</span>
+        </div>
+        <div id="leaderboardRows"></div>
+        <p id="leaderboardEmpty" class="empty-state">
+          No results yet. Complete a quiz to start your ranking!
+        </p>
+        <p class="muted-text">This starter version uses local browser storage.
+          It is not a global leaderboard.</p>
+      </div>
+    </section>
+
+    <section id="profile" class="page">
+      <div class="page-heading">
+        <span class="eyebrow">YOUR LEARNING JOURNEY</span>
+        <h1>My Profile</h1>
+        <p>Review your quiz progress and achievements.</p>
+      </div>
+      <div id="profileContent"></div>
+    </section>
+
+    <section id="auth" class="page">
+      <div class="auth-card">
+        <div class="auth-logo">Q</div>
+        <span class="eyebrow">WELCOME TO QUIZMASTER</span>
+        <h1 id="authTitle">Welcome back!</h1>
+        <p id="authDescription">Log in to continue your learning journey.</p>
+
+        <div class="auth-tabs">
+          <button id="loginTab" class="auth-tab selected">Login</button>
+          <button id="registerTab" class="auth-tab">Register</button>
+        </div>
+
+        <form id="authForm">
+          <label for="authName" id="nameLabel" hidden>Full name</label>
+          <input id="authName" type="text" placeholder="Full name"
+                 autocomplete="name" hidden>
+
+          <label for="authEmail">Email address</label>
+          <input id="authEmail" type="email" placeholder="you@example.com"
+                 autocomplete="email" required>
+
+          <label for="authPassword">Password</label>
+          <input id="authPassword" type="password" placeholder="At least 6 characters"
+                 autocomplete="current-password" minlength="6" required>
+
+          <p id="authMessage" class="form-message" aria-live="polite"></p>
+          <button id="authSubmit" type="submit" class="btn primary full-width">Login</button>
+        </form>
+        <p class="muted-text small-note">
+          Demo only: accounts are stored in this browser and are not secure
+          for real-world use. Do not use a real password.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo footer-logo" href="#" data-page="home">
+      <span class="logo-icon">Q</span> QuizMaster
+    </a>
+    <p>Keep learning. Keep growing. Keep winning. ✨</p>
+    <span>© <span id="currentYear"></span> QuizMaster</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
