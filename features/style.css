@@ -1,0 +1,50 @@
+
+/* ==========================================
+   QUIZMASTER DAY 3 STYLES
+========================================== */
+
+.day3-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.day3-hint-button {
+  padding: 10px 16px;
+  border: 1px solid #8b5cf6;
+  border-radius: 10px;
+  background: #2e2050;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.day3-hint-button:hover:not(:disabled) {
+  background: #4c3280;
+  transform: translateY(-2px);
+}
+
+.day3-hint-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.day3-hint-feedback {
+  color: #c4b5fd;
+  font-size: 0.9rem;
+}
+
+.day3-hint-removed {
+  opacity: 0.4;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.day3-hint-removed:hover {
+  transform: none;
+}
