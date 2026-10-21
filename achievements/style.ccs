@@ -1,0 +1,165 @@
+
+/* QuizMaster Day 5: Achievements */
+.day5-achievements {
+  max-width: 1000px;
+  margin: 28px auto;
+  padding: 24px;
+  color: #f8f7ff;
+  background: linear-gradient(145deg, #17152f, #29204b);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.day5-achievements[hidden] {
+  display: none !important;
+}
+
+.day5-heading {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.day5-description {
+  color: #c8c3df;
+  line-height: 1.65;
+}
+
+.day5-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.day5-stat {
+  flex: 1 1 130px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(196, 181, 253, 0.15);
+  border-radius: 14px;
+}
+
+.day5-stat strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+.day5-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.day5-badge {
+  min-width: 0;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid #484064;
+  border-radius: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.day5-badge:hover {
+  transform: translateY(-3px);
+  border-color: #a78bfa;
+}
+
+.day5-badge.is-earned {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: #4ade80;
+}
+
+.day5-badge-icon {
+  font-size: 2.3rem;
+}
+
+.day5-badge h3 {
+  margin: 10px 0 6px;
+}
+
+.day5-badge p {
+  margin: 0;
+  color: #c8c3df;
+  line-height: 1.5;
+}
+
+.day5-status {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 5px 9px;
+  font-size: 0.8rem;
+  border-radius: 99px;
+  background: rgba(196, 181, 253, 0.12);
+}
+
+.day5-badge.is-earned .day5-status {
+  color: #86efac;
+  background: rgba(74, 222, 128, 0.12);
+}
+
+.day5-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.day5-button {
+  padding: 11px 15px;
+  color: #19152f;
+  font: inherit;
+  font-weight: 700;
+  background: #c4b5fd;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.day5-button:hover {
+  background: #ddd6fe;
+}
+
+.day5-button:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+.day5-button.secondary {
+  color: #f8f7ff;
+  background: #383052;
+  border: 1px solid #655781;
+}
+
+.day5-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.day5-feedback {
+  min-height: 24px;
+  color: #c4b5fd;
+  line-height: 1.6;
+}
+
+.day5-note {
+  padding: 13px;
+  color: #e9e4ff;
+  background: rgba(196, 181, 253, 0.08);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .day5-achievements {
+    margin: 18px 10px;
+    padding: 17px;
+  }
+
+  .day5-grid {
+    grid-template-columns: 1fr;
+  }
+}
