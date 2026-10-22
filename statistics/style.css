@@ -1,0 +1,247 @@
+
+/* QuizMaster Day 6 — Statistics Dashboard */
+
+.day6-dashboard {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 26px;
+  color: #f8f7ff;
+  background: linear-gradient(145deg, #15142e, #242044);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 22px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.2);
+}
+
+.day6-dashboard[hidden] {
+  display: none !important;
+}
+
+.day6-heading {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.day6-muted {
+  color: #c7c2df;
+  line-height: 1.7;
+}
+
+.day6-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.day6-kpi {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #433b60;
+  border-radius: 16px;
+}
+
+.day6-kpi-label {
+  color: #c7c2df;
+  font-size: 0.9rem;
+}
+
+.day6-kpi-value {
+  display: block;
+  margin-top: 9px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+}
+
+.day6-kpi-detail {
+  display: block;
+  margin-top: 7px;
+  color: #c4b5fd;
+  font-size: 0.8rem;
+}
+
+.day6-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin: 24px 0;
+}
+
+.day6-panel {
+  min-width: 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid #433b60;
+  border-radius: 16px;
+}
+
+.day6-panel h3 {
+  margin-top: 0;
+}
+
+.day6-bar-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.day6-bar-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.day6-bar-track {
+  height: 10px;
+  overflow: hidden;
+  background: #393251;
+  border-radius: 99px;
+}
+
+.day6-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #67e8f9);
+  border-radius: inherit;
+  transition: width 0.5s ease;
+}
+
+.day6-donut-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 18px 0;
+}
+
+.day6-donut {
+  display: grid;
+  width: 150px;
+  height: 150px;
+  flex: 0 0 150px;
+  place-items: center;
+  border-radius: 50%;
+  background: conic-gradient(
+    #a78bfa 0 var(--day6-accuracy),
+    #3b3455 var(--day6-accuracy) 100%
+  );
+}
+
+.day6-donut-hole {
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-content: center;
+  text-align: center;
+  background: #211d3d;
+  border-radius: 50%;
+}
+
+.day6-donut-hole strong {
+  font-size: 1.6rem;
+}
+
+.day6-legend {
+  display: grid;
+  gap: 12px;
+}
+
+.day6-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #ded9f5;
+}
+
+.day6-dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  background: #a78bfa;
+  border-radius: 50%;
+}
+
+.day6-dot.incorrect {
+  background: #4b4269;
+}
+
+.day6-table-wrap {
+  overflow-x: auto;
+}
+
+.day6-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.day6-table th,
+.day6-table td {
+  padding: 13px 10px;
+  border-bottom: 1px solid #433b60;
+}
+
+.day6-table th {
+  color: #c4b5fd;
+  font-size: 0.85rem;
+}
+
+.day6-table td {
+  color: #f1efff;
+}
+
+.day6-empty {
+  padding: 18px;
+  color: #c7c2df;
+  text-align: center;
+  border: 1px dashed #655781;
+  border-radius: 12px;
+}
+
+.day6-note {
+  margin-top: 20px;
+  padding: 14px;
+  color: #e9e4ff;
+  background: rgba(196, 181, 253, 0.08);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.day6-button {
+  padding: 11px 15px;
+  color: #19152f;
+  font: inherit;
+  font-weight: 700;
+  background: #c4b5fd;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.day6-button:hover {
+  background: #ddd6fe;
+}
+
+.day6-button:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .day6-dashboard {
+    margin: 18px 10px;
+    padding: 17px;
+  }
+
+  .day6-panel {
+    padding: 15px;
+  }
+
+  .day6-table th,
+  .day6-table td {
+    padding: 10px 7px;
+    font-size: 0.85rem;
+  }
+}
