@@ -1,0 +1,363 @@
+/* ==========================================
+   QUIZMASTER DAY 8
+   Leaderboard & Ranking Improvements
+   Independent add-on styles
+========================================== */
+
+#day8Leaderboard,
+#day8Leaderboard * {
+    box-sizing: border-box;
+}
+
+#day8Leaderboard {
+    --day8-bg: #15122b;
+    --day8-card: #211c40;
+    --day8-border: rgba(180, 155, 255, 0.18);
+    --day8-text: #f4f0ff;
+    --day8-muted: #aaa2ca;
+    --day8-purple: #a78bfa;
+    --day8-green: #63e6be;
+
+    width: min(1100px, 94%);
+    margin: 35px auto;
+    padding: 26px;
+    color: var(--day8-text);
+    background: var(--day8-bg);
+    border: 1px solid var(--day8-border);
+    border-radius: 22px;
+    font-family: "DM Sans", "Manrope", Arial, sans-serif;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+}
+
+#day8Leaderboard .day8-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+#day8Leaderboard .day8-eyebrow {
+    color: var(--day8-purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#day8Leaderboard h2 {
+    margin: 8px 0;
+    color: var(--day8-text);
+    font-size: clamp(24px, 4vw, 34px);
+}
+
+#day8Leaderboard .day8-subtitle {
+    margin: 0;
+    color: var(--day8-muted);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+#day8Leaderboard .day8-trophy {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #6d4aff, #bd79ff);
+    font-size: 38px;
+    box-shadow: 0 10px 30px rgba(141, 91, 255, 0.25);
+}
+
+#day8Leaderboard .day8-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#day8Leaderboard .day8-control {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+#day8Leaderboard .day8-control label {
+    color: var(--day8-muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#day8Leaderboard select {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px;
+    color: var(--day8-text);
+    background: var(--day8-card);
+    border: 1px solid var(--day8-border);
+    border-radius: 12px;
+    outline: none;
+    font: inherit;
+}
+
+#day8Leaderboard select:focus {
+    border-color: var(--day8-purple);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+}
+
+#day8Leaderboard select option {
+    color: #ffffff;
+    background: #211c40;
+}
+
+#day8Leaderboard .day8-podium {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    align-items: stretch;
+    margin: 24px 0;
+}
+
+#day8Leaderboard .day8-podium-card {
+    position: relative;
+    padding: 22px 12px;
+    text-align: center;
+    background: var(--day8-card);
+    border: 1px solid var(--day8-border);
+    border-radius: 18px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+#day8Leaderboard .day8-podium-card:hover {
+    transform: translateY(-4px);
+}
+
+#day8Leaderboard .day8-podium-card.day8-first {
+    border-color: rgba(255, 207, 92, 0.65);
+    background: linear-gradient(
+        160deg,
+        rgba(255, 207, 92, 0.13),
+        var(--day8-card) 70%
+    );
+}
+
+#day8Leaderboard .day8-podium-card.day8-second {
+    border-color: rgba(205, 214, 232, 0.5);
+}
+
+#day8Leaderboard .day8-podium-card.day8-third {
+    border-color: rgba(220, 142, 87, 0.5);
+}
+
+#day8Leaderboard .day8-medal {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 35px;
+}
+
+#day8Leaderboard .day8-avatar {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7055e8, #c17aff);
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+#day8Leaderboard .day8-player-name {
+    margin: 0 0 7px;
+    color: var(--day8-text);
+    font-size: 15px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+#day8Leaderboard .day8-player-score {
+    margin: 0;
+    color: var(--day8-green);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+#day8Leaderboard .day8-player-label {
+    margin-top: 6px;
+    color: var(--day8-muted);
+    font-size: 12px;
+}
+
+#day8Leaderboard .day8-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--day8-border);
+    border-radius: 15px;
+}
+
+#day8Leaderboard .day8-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#day8Leaderboard .day8-table th {
+    padding: 15px 13px;
+    color: var(--day8-muted);
+    background: rgba(167, 139, 250, 0.08);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+#day8Leaderboard .day8-table td {
+    padding: 15px 13px;
+    border-top: 1px solid var(--day8-border);
+    color: var(--day8-text);
+    font-size: 14px;
+}
+
+#day8Leaderboard .day8-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+#day8Leaderboard .day8-table tbody tr:hover {
+    background: rgba(167, 139, 250, 0.07);
+}
+
+#day8Leaderboard .day8-table tbody tr.day8-current-user {
+    background: rgba(167, 139, 250, 0.14);
+    outline: 1px solid rgba(167, 139, 250, 0.35);
+    outline-offset: -1px;
+}
+
+#day8Leaderboard .day8-you-badge {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 3px 7px;
+    border-radius: 20px;
+    background: rgba(167, 139, 250, 0.2);
+    color: #d7c7ff;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+#day8Leaderboard .day8-rank {
+    font-weight: 900;
+}
+
+#day8Leaderboard .day8-xp {
+    color: var(--day8-green);
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+#day8Leaderboard .day8-empty {
+    padding: 28px 15px;
+    color: var(--day8-muted);
+    text-align: center;
+    line-height: 1.7;
+}
+
+#day8Leaderboard .day8-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    color: var(--day8-muted);
+    font-size: 12px;
+}
+
+#day8Leaderboard .day8-refresh {
+    padding: 10px 16px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #7055e8, #a66cff);
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#day8Leaderboard .day8-refresh:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+#day8Leaderboard .day8-refresh:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+#day8Leaderboard .day8-demo-note {
+    margin-top: 16px;
+    padding: 12px 14px;
+    color: var(--day8-muted);
+    background: rgba(167, 139, 250, 0.07);
+    border: 1px dashed var(--day8-border);
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+    #day8Leaderboard {
+        padding: 17px;
+        border-radius: 17px;
+    }
+
+    #day8Leaderboard .day8-controls {
+        grid-template-columns: 1fr;
+    }
+
+    #day8Leaderboard .day8-podium {
+        gap: 8px;
+    }
+
+    #day8Leaderboard .day8-podium-card {
+        padding: 15px 7px;
+    }
+
+    #day8Leaderboard .day8-medal {
+        font-size: 28px;
+    }
+
+    #day8Leaderboard .day8-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+
+    #day8Leaderboard .day8-player-name {
+        font-size: 12px;
+    }
+
+    #day8Leaderboard .day8-player-score {
+        font-size: 16px;
+    }
+
+    #day8Leaderboard .day8-table th,
+    #day8Leaderboard .day8-table td {
+        padding: 12px 9px;
+        font-size: 12px;
+    }
+
+    #day8Leaderboard .day8-you-badge {
+        margin: 4px 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #day8Leaderboard *,
+    #day8Leaderboard *::before,
+    #day8Leaderboard *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
