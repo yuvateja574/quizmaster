@@ -1,0 +1,306 @@
+/* ==========================================
+   QUIZMASTER DAY 9
+   Testing & Quality Control Dashboard
+   Independent add-on styles
+========================================== */
+
+#day9Testing,
+#day9Testing * {
+    box-sizing: border-box;
+}
+
+#day9Testing {
+    --d9-bg: #15122b;
+    --d9-card: #211c40;
+    --d9-border: rgba(180, 155, 255, 0.2);
+    --d9-text: #f4f0ff;
+    --d9-muted: #aaa2ca;
+    --d9-purple: #a78bfa;
+    --d9-green: #63e6be;
+    --d9-red: #ff808e;
+    --d9-yellow: #ffd166;
+
+    width: min(1100px, 94%);
+    margin: 35px auto;
+    padding: 25px;
+    color: var(--d9-text);
+    background: var(--d9-bg);
+    border: 1px solid var(--d9-border);
+    border-radius: 22px;
+    font-family: "DM Sans", "Manrope", Arial, sans-serif;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+}
+
+#day9Testing h2,
+#day9Testing h3,
+#day9Testing p {
+    margin-top: 0;
+}
+
+#day9Testing .d9-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+#day9Testing .d9-eyebrow {
+    color: var(--d9-purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#day9Testing h2 {
+    margin: 8px 0;
+    font-size: clamp(24px, 4vw, 34px);
+}
+
+#day9Testing .d9-description {
+    max-width: 650px;
+    margin-bottom: 0;
+    color: var(--d9-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#day9Testing .d9-icon {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #7055e8, #bd79ff);
+    font-size: 35px;
+}
+
+#day9Testing .d9-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+#day9Testing .d9-stat {
+    padding: 18px 14px;
+    background: var(--d9-card);
+    border: 1px solid var(--d9-border);
+    border-radius: 15px;
+}
+
+#day9Testing .d9-stat-label {
+    color: var(--d9-muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#day9Testing .d9-stat-value {
+    display: block;
+    margin-top: 9px;
+    font-size: 27px;
+    font-weight: 900;
+}
+
+#day9Testing .d9-stat-value.d9-pass {
+    color: var(--d9-green);
+}
+
+#day9Testing .d9-stat-value.d9-warn {
+    color: var(--d9-yellow);
+}
+
+#day9Testing .d9-stat-value.d9-fail {
+    color: var(--d9-red);
+}
+
+#day9Testing .d9-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+#day9Testing .d9-button {
+    padding: 12px 17px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #7055e8, #a66cff);
+    border: 0;
+    border-radius: 11px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#day9Testing .d9-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+#day9Testing .d9-button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+    transform: none;
+}
+
+#day9Testing .d9-button.d9-secondary {
+    color: var(--d9-text);
+    background: var(--d9-card);
+    border: 1px solid var(--d9-border);
+}
+
+#day9Testing .d9-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+#day9Testing .d9-status {
+    margin-left: auto;
+    color: var(--d9-muted);
+    font-size: 12px;
+}
+
+#day9Testing .d9-results {
+    display: grid;
+    gap: 11px;
+}
+
+#day9Testing .d9-result {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 13px;
+    padding: 16px;
+    background: var(--d9-card);
+    border: 1px solid var(--d9-border);
+    border-radius: 14px;
+}
+
+#day9Testing .d9-result-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(167, 139, 250, 0.12);
+    font-size: 19px;
+}
+
+#day9Testing .d9-result h3 {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+#day9Testing .d9-result p {
+    margin-bottom: 0;
+    color: var(--d9-muted);
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+#day9Testing .d9-badge {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+#day9Testing .d9-badge.pass {
+    color: var(--d9-green);
+    background: rgba(99, 230, 190, 0.12);
+}
+
+#day9Testing .d9-badge.warn {
+    color: var(--d9-yellow);
+    background: rgba(255, 209, 102, 0.12);
+}
+
+#day9Testing .d9-badge.fail {
+    color: var(--d9-red);
+    background: rgba(255, 128, 142, 0.12);
+}
+
+#day9Testing .d9-badge.info {
+    color: #cbbaff;
+    background: rgba(167, 139, 250, 0.13);
+}
+
+#day9Testing .d9-empty {
+    padding: 28px 15px;
+    color: var(--d9-muted);
+    text-align: center;
+    line-height: 1.7;
+}
+
+#day9Testing .d9-note {
+    margin-top: 18px;
+    padding: 14px;
+    color: var(--d9-muted);
+    background: rgba(167, 139, 250, 0.07);
+    border: 1px dashed var(--d9-border);
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+#day9Testing .d9-note strong {
+    color: var(--d9-text);
+}
+
+@media (max-width: 750px) {
+    #day9Testing {
+        padding: 17px;
+        border-radius: 17px;
+    }
+
+    #day9Testing .d9-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #day9Testing .d9-result {
+        grid-template-columns: 36px minmax(0, 1fr);
+    }
+
+    #day9Testing .d9-result-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    #day9Testing .d9-result > .d9-badge {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    #day9Testing .d9-status {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    #day9Testing .d9-stat {
+        padding: 13px 10px;
+    }
+
+    #day9Testing .d9-stat-value {
+        font-size: 23px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #day9Testing *,
+    #day9Testing *::before,
+    #day9Testing *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
